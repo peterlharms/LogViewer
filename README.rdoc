@@ -1,0 +1,48 @@
+== README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+* Ruby version - ruby 2.1.0
+
+Steps to Run
+1. Need to Update Log file Path in logs_controller.rb on line 5
+2. Run Database Migrations:
+	bundle exec rake db:migrate
+3. Run Rails Server
+	rails s
+4. Open http://localhost:3000/
+
+Peter's Notes:
+	Overview			
+		The strategy was to get the log data into a DB,
+		with all information connected to the GUID,
+		and then to be able to query the GUID and other fields,
+		and return all information for any records found
+	Observations/Assumptions
+		Most log file entries were of the form "[guid] text"
+		Some entries did not have a guid.  In those cases, 
+		the guid was assumed to be the same as the previous one
+		The first entry for a given guid was well structured,
+		whereas others were free text.
+		guid entries were not all in adjacent records, but it
+		was assumed that the order was correct
+	Implementation Summary
+		Data loaded in two passes.
+		First pass is to assign guid to all records.
+		Second pass collects all guid records into one record
+		Results of the second pass are queried
+	Enhancements not done
+		The log file is hard coded - there should either be a 
+		file picker or the ability for the admin to change the
+		location, which could be in the DB.
+		There should be control over deleting the old logs,
+		or better yet a feature to delete logs that are older
+		than a particular date.
+		The date and time should be put into a DateTime column,
+		instead of date and time, to allow time ranges.
+		Better error checking/notification - for example if the 
+		log file does not follow the assumptions.
+		Unit tests were not attempted.
+		Making the UI much more user friendly.
+		Security vulnerability review.

@@ -1,0 +1,61 @@
+<%= form_tag("/logs/search", method: "get") do %>
+<table>
+    <tr>
+        <td>
+            <%= label_tag(:guid, "Search for GUID:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:guid) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:details, "Search for DETAILS:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:details) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:keyword, "Search for KEYWORD:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:keyword) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:url, "Search for URL:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:url) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:ip, "Search for IP:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:ip) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:date, "Search for Date:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:date) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:time, "Search for Time:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:time) %>
+        </td>
+    </tr>
+</table>
+  <%= submit_tag("Search") %>
+<% end %>

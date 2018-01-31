@@ -1,0 +1,33 @@
+<h1>Search Results</h1>
+      <%= render 'form' %>
+
+
+<% @show.each { |param| %> 
+	 <li><%= param %></li>
+<% } %>
+
+
+<table border="1">
+	<tr>
+		<th><b><u>GUID</u></b></th>
+		<th><b><u>DETAILS</u></b></th>
+		<th><b><u>KEYWORD</u></b></th>
+		<th><b><u>URL</u></b></th>
+		<th><b><u>IP</u></b></th>
+		<th><b><u>DATE</u></b></th>
+		<th><b><u>TIME</u></b></th>
+		<th><b><u>ZONE</u></b></th>
+	</tr>
+<% @searchResults.each do |log| %> 
+  <tr>
+	 <td><%= log.guid %></td>
+	 <td><%= log.details %></td>
+	 <td><%= log.keyword %></td>
+	 <td><%= log.url %></td>
+	 <td><%= log.ip %></td>
+	 <td><%= log.date %></td>
+	 <td><%= log.time %></td>
+	 <td><%= log.zone %></td>
+</tr>
+<% end %>
+</table>

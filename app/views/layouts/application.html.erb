@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div align="center">
+<h1>LogViewer</h1>
+<%= link_to 'Home',static_pages_index_path %>
+<%= link_to 'About',static_pages_about_path %>
+<%= link_to 'Contact', static_pages_contact_path %>
+<%= yield %>
+</div>
+</body>
+</html>
